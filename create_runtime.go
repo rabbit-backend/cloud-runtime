@@ -5,10 +5,10 @@ import (
 	"github.com/rabbit-backend/cloud-runtime/require"
 )
 
-func CreateRuntime() *goja.Runtime {
+func New() *goja.Runtime {
 	vm := goja.New()
 
-	require := require.NewRequire(vm)
+	require := require.New(vm)
 	require.Init()
 
 	return vm

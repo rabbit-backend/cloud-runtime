@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	runtime := runtime.CreateRuntime()
+	runtime := runtime.New()
 
 	runtime.Set("log", fmt.Println)
 
@@ -22,6 +22,6 @@ func main() {
 		log("pwd", env.getEnv("PWD"))
 
 		const buffer = fs.read("go.mod")
-		log("data", buffer)
+		log(buffer)
 	`)
 }

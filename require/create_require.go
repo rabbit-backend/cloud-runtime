@@ -11,7 +11,7 @@ type Require struct {
 	VM         *goja.Runtime
 }
 
-func NewRequire(vm *goja.Runtime) *Require {
+func New(vm *goja.Runtime) *Require {
 	return &Require{
 		module_map: map[string]interface{}{},
 		VM:         vm,

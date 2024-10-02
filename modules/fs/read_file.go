@@ -3,11 +3,9 @@ package fs
 import (
 	"bytes"
 	"os"
-
-	"github.com/dop251/goja"
 )
 
-func (fs *FsModule) Read(path string) goja.ArrayBuffer {
+func (fs *FsModule) Read(path string) string {
 	file, err := os.Open(path)
 	if err != nil {
 		panic(fs.vm.ToValue(err))
@@ -18,5 +16,5 @@ func (fs *FsModule) Read(path string) goja.ArrayBuffer {
 		panic(fs.vm.ToValue(err))
 	}
 
-	return fs.vm.NewArrayBuffer(buf.Bytes())
+	return buf.String()
 }
