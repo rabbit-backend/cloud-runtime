@@ -18,7 +18,7 @@ func main() {
 
 		const response = http.get("https://httpbin.zcorky.com/get")
 
-		log("response", response);
+		log("response", http.json(response));
 		log("username", env.getEnv("USERNAME"))
 
 		const buffer = fs.read("go.mod")
