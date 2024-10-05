@@ -15,9 +15,9 @@ type Factory = func(vm *goja.Runtime) Module
 
 func CreateFactory(vm *goja.Runtime) map[string]Module {
 	factory := map[string]Module{
-		"rabbit:http": http.New(vm),
-		"rabbit:env":  env.New(vm),
-		"rabbit:fs":   fs.New(vm),
+		"http": http.New(vm),
+		"env":  env.New(vm),
+		"fs":   fs.New(vm),
 	}
 
 	return factory

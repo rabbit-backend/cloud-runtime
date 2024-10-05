@@ -12,9 +12,9 @@ func main() {
 	runtime.Set("log", fmt.Println)
 
 	runtime.RunString(`
-		const http = require("rabbit:http")
-		const env = require("rabbit:env")
-		const fs = require("rabbit:fs")
+		const http = require("http")
+		const env = require("env")
+		const fs = require("fs")
 
 		const response = http.get("https://httpbin.zcorky.com/get")
 
